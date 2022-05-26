@@ -46,7 +46,7 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <TextBox Name="txtСonvertedCurrency" Width="200" Height="30" Margin="0,50,0,0" PreviewTextInput="NumberValidationTextBox" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center">
+            <TextBox Name="txtСonvertedCurrency" Width="200" Height="30" Margin="0,50,0,0" PreviewTextInput="СonvertedNumberValidationTextBox" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" TextChanged="txtСonvertedCurrency_TextChanged">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>
@@ -58,7 +58,7 @@
             </TextBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Height="158" Width="400" VerticalAlignment="Top" Margin="500,72,0,0">
-            <ComboBox x:Name="cmbFromCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" Margin="0,0,0,0"/>
+            <ComboBox x:Name="cmbFromCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" Margin="0,0,0,0" SelectionChanged="cmbFromCurrency_SelectionChanged"/>
             <ComboBox x:Name="cmbToCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" SelectionChanged="cmbToCurrency_SelectionChanged" Margin="0,50,0,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Height="100" Width="1000" Orientation="Horizontal">
