@@ -16,13 +16,11 @@ using System.Windows.Shapes;
 
 namespace CurrencyConverter
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
+            this.FontFamily = new FontFamily("Arial");
             InitializeComponent();
             BindCurrency();
         }
@@ -52,29 +50,42 @@ namespace CurrencyConverter
 
         }
 
-        private void txtCurrency_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtСonvertedCurrency_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void cmbFromCurrency_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void cmbToCurrency_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
+            double ConvertedValue;
+            if (txtCurrency.Text == null || txtCurrency.Text.Trim() == "")
+            {   
+                MessageBox.Show("Пожалуйства введите значение", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                txtCurrency.Focus();
+                return;
+            }
+            else if (cmbFromCurrency.SelectedValue == null || cmbFromCurrency.SelectedIndex == 0)
+            {
+                MessageBox.Show("Пожалуйста, выберете валюту из которой вы конвертируете", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                cmbFromCurrency.Focus();
+                return;
+            }
+            else if (cmbToCurrency.SelectedValue == null || cmbToCurrency.SelectedIndex == 0)
+            {
+                MessageBox.Show("Пожалуйста, выберете валюту в которую вы конвертируете", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                cmbToCurrency.Focus();
+                return;
+            }
 
+            if (cmbFromCurrency.Text == cmbToCurrency.Text)
+            {
+                ConvertedValue = double.Parse(txtCurrency.Text);
+
+                txtСonvertedCurrency.Text =ConvertedValue.ToString("N3");
+            }
+            else
+            {
+
+                ConvertedValue = (double.Parse(cmbFromCurrency.SelectedValue.ToString()) * double.Parse(txtCurrency.Text)) / double.Parse(cmbToCurrency.SelectedValue.ToString());
+
+                txtСonvertedCurrency.Text = ConvertedValue.ToString("N3");
+            }
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)

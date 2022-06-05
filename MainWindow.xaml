@@ -36,30 +36,13 @@
             <Label Height="40" Width="289" Content="В: " Foreground="White" FontSize="20" Margin="110,0,0,0"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Width="400"  Margin="100,72,0,0">
-            <TextBox x:Name="txtCurrency" Width="200" Height="30" PreviewTextInput="NumberValidationTextBox" FontSize="18" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" TextChanged="txtCurrency_TextChanged">
-                <TextBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBox.RenderTransform>
+            <TextBox x:Name="txtCurrency" Width="200" Height="30" PreviewTextInput="NumberValidationTextBox" FontSize="18" VerticalContentAlignment="Center"  FontFamily="Arial">
             </TextBox>
-            <TextBox Name="txtСonvertedCurrency" Width="200" Height="30" Margin="0,50,0,0" PreviewTextInput="СonvertedNumberValidationTextBox" FontSize="18" VerticalContentAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" TextChanged="txtСonvertedCurrency_TextChanged">
-                <TextBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBox.RenderTransform>
-            </TextBox>
+            <TextBox Name="txtСonvertedCurrency" Width="200" Height="30" Margin="0,50,0,0" PreviewTextInput="СonvertedNumberValidationTextBox" FontSize="18"  VerticalContentAlignment="Center" VerticalAlignment="Top"  HorizontalAlignment="Center" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Height="158" Width="400" VerticalAlignment="Top" Margin="500,72,0,0">
-            <ComboBox x:Name="cmbFromCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" Margin="0,0,0,0" SelectionChanged="cmbFromCurrency_SelectionChanged"/>
-            <ComboBox x:Name="cmbToCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" SelectionChanged="cmbToCurrency_SelectionChanged" Margin="0,50,0,0"/>
+            <ComboBox x:Name="cmbFromCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" Margin="0,0,0,0" FontFamily="Arial"/>
+            <ComboBox x:Name="cmbToCurrency" Width="200" Height="30" FontSize="18"  MaxDropDownHeight="150" Margin="0,50,0,0" FontFamily="Arial" FontWeight="Normal"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Height="100" Width="1000" Orientation="Horizontal">
             <Button Name="Convert" Height="40" Width="150" Content="Convert" Click="Convert_Click" Margin="350 0 20 0" Foreground="White" FontSize="20">
