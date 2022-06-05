@@ -88,19 +88,22 @@ namespace CurrencyConverter
             }
         }
 
+        private void ClearControls()
+        {
+            txtCurrency.Text = string.Empty;
+            if (cmbFromCurrency.Items.Count > 0)
+                cmbFromCurrency.SelectedIndex = 0;
+            if (cmbToCurrency.Items.Count > 0)
+                cmbToCurrency.SelectedIndex = 0;
+            txtСonvertedCurrency.Text = "";
+            txtCurrency.Focus();
+        }
+ 
+
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-
+            ClearControls();
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-
-        }
-
-        private void СonvertedNumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-
-        }
     }
 }
